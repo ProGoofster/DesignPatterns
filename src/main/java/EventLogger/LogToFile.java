@@ -13,7 +13,7 @@ public class LogToFile implements ILogger{
     public LogToFile(String fileName) {
         this.fileName = fileName;
         try {
-            writer = new PrintWriter(new FileWriter(fileName, true));
+            writer = new PrintWriter(new FileWriter(fileName+".txt", true));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -33,7 +33,7 @@ public class LogToFile implements ILogger{
 
         iteration++;
         try {
-            writer = new PrintWriter(new FileWriter(String.format("%s%d", fileName, iteration), true));
+            writer = new PrintWriter(new FileWriter(fileName + iteration + ".txt", true));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

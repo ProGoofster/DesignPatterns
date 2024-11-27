@@ -12,19 +12,23 @@ public class EventLogger {
         loggers = new ArrayList<>();
     }
 
+    public void addLogger(ILogger logger){
+        loggers.add(logger);
+    }
+
     public void log(LogLevel level, String message) {
         for (ILogger logger : loggers) {
             logger.log(level + ": " + message);
         }
     }
 
-    public void LogInfo(String message){
+    public void logInfo(String message){
         log(LogLevel.INFO, message);
     }
-    public void LogDebug(String message){
+    public void logDebug(String message){
         log(LogLevel.DEBUG, message);
     }
-    public void LogError(String message){
+    public void logError(String message){
         log(LogLevel.ERROR, message);
     }
 
