@@ -17,7 +17,7 @@ public class Main {
 
             System.out.println("\n Type Y to confirm format choice, anything else will let you select a new format");
             Scanner scanner = new Scanner(System.in);
-            String result = scanner.next().toLowerCase();
+            String result = scanner.nextLine().toLowerCase();
             if(result.equals("y")) break;
         }
 
@@ -27,7 +27,7 @@ public class Main {
     public static ArrayList<String> readFile() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter a path to a .txt file");
-        String filePath = scanner.next();
+        String filePath = scanner.nextLine();
         if (!filePath.endsWith(".txt")){
             return readFile();
         }
@@ -47,7 +47,7 @@ public class Main {
     public static IFormat getFormat(ArrayList<String> text){
         System.out.println("Please select a valid format type.");
         Scanner scanner = new Scanner(System.in);
-        String formatName = scanner.next();
+        String formatName = scanner.nextLine();
         return switch (formatName.toLowerCase()) {
             case "html" -> {
                 System.out.println("Selected HTML");

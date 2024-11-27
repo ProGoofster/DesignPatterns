@@ -21,7 +21,7 @@ public class Main {
             System.out.println("C. Slack");
             System.out.println("D. Confirm Selections");
 
-            String selection = scanner.next().toLowerCase();
+            String selection = scanner.nextLine().toLowerCase();
 
             if(selection.matches("d")) break;
             if(selection.matches("^(?![abc]$).+")) continue;
